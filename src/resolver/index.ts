@@ -1,5 +1,6 @@
 import { IResolvers } from "graphql-tools";
 import { admins } from "./Admin";
+import {invoices} from "./Invoice"
 
 const resolverMAP: IResolvers = {
   Query: {
@@ -8,7 +9,8 @@ const resolverMAP: IResolvers = {
     },
 
     // Admin
-    admins
+    admins,
+    invoices
   }
 };
 

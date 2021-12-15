@@ -10,12 +10,15 @@ require("dotenv").config();
 import schema from "./schema";
 
 const sequelize = new Sequelize({
-  database: process.env.DB_NAME,
-  dialect: "postgres",
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  storage: ":memory:",
-  port: 5432,
+  database: "dashboard",
+  dialect: "mysql",
+  host:"127.0.0.1",
+  username: "root",
+  password: "mk159753",
+  port: 3306,
+  define:{
+    timestamps:false
+  },
   models: [__dirname + "/models"],
   modelMatch: (filename, member) => {
     return (
@@ -25,7 +28,7 @@ const sequelize = new Sequelize({
 });
 
 sequelize.authenticate().then(() => {
-  console.log("good~!");
+  console.log("db connected succesfully");
 });
 
 const app = express();

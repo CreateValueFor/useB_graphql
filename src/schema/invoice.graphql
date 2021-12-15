@@ -1,0 +1,66 @@
+type Invoice {
+  id: ID
+  userid: String 
+  apidate: String
+
+  "ocr invoice columns" 
+  ocr_total: Int
+  ocr_invalid: Int
+  ocr_month_calls: Int
+  ocr_month_fee: Int
+  ocr_unit_statndard: Int
+  ocr_unit_price: Int
+  ocr_discount: Int
+
+  "status invoice columns"
+  status_total: Int
+  status_invalid: Int
+  status_month_calls: Int
+  status_month_fee: Int
+  status_unit_statndard: Int
+  status_unit_price: Int
+  status_discount: Int
+
+  "face invoice columns"
+  face_total: Int
+  face_invalid: Int
+  face_month_calls: Int
+  face_month_fee: Int
+  face_unit_statndard: Int
+  face_unit_price: Int
+  face_discount: Int
+
+  "openbank invoice columns"
+  openbank_total: Int
+  openbank_invalid: Int
+  openbank_month_calls: Int
+  openbank_month_fee: Int
+  openbank_unit_statndard: Int
+  openbank_unit_price: Int
+  openbank_discount: Int
+
+  "status_doc invoice columns"
+  status_doc_total: Int
+  status_doc_invalid: Int
+  status_doc_month_calls: Int
+  status_doc_month_fee: Int
+  status_doc_unit_statndard: Int
+  status_doc_unit_price: Int
+  status_doc_discount: Int
+
+  "ocr_doc invoice columns"
+  ocr_doc_total: Int
+  ocr_doc_invalid: Int
+  ocr_doc_month_calls: Int
+  ocr_doc_month_fee: Int
+  ocr_doc_unit_statndard: Int
+  ocr_doc_unit_price: Int
+  ocr_doc_discount: Int
+
+  annual: Int
+  license:Int
+  deposit:Int
+  coupon:Int
+  total_fee:Int
+  flag:Int
+}
