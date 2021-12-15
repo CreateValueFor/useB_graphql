@@ -1,3 +1,6 @@
 type Admin {
   userID: String
 }
+type Invoice {
+  id : ID
+}

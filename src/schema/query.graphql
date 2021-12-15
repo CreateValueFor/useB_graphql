@@ -3,4 +3,5 @@
 type Query {
   helloWorld: String!
   admins: [Admin]
+  invoices: [Invoice]
 }
