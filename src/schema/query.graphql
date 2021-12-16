@@ -1,8 +1,7 @@
 # import Admin from "admin.graphql"
 # import Invoice from "invoice.graphql"
 
-
-
+# define query
 type Query {
   helloWorld: String!
   admins: [Admin]

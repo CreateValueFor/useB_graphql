@@ -3,8 +3,6 @@
 import {Op} from "sequelize"
 import { Invoice } from "../models/invoice.model";
 
-
-
 interface IFilter {
   apidate: string;
   company: string;
@@ -24,7 +22,7 @@ const _getItems = async (apidate:string="all",company: string="all",page:string=
   return invoices;
 };
 
-
+// get invoice resolver
 // TODO : need to change isSent type to String | Boolean 
 // TODO : failed caused by graphql multiple types
 const get_invoices = async (_:void, args:IFilter={
@@ -71,6 +69,7 @@ const get_invoices = async (_:void, args:IFilter={
       }
     }
   }
+  //TODO connect company table
   if(billing_date !== "all"){
     if(billing_date === "early"){
       // where ={

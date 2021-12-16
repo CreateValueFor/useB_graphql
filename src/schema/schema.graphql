@@ -1,5 +1,6 @@
 # import Query from "query.graphql"
 
+#  combine every queries
 schema {
   query: Query
 }
