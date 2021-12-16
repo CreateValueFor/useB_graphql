@@ -1,9 +1,9 @@
 type Invoice {
   id: ID
-  userid: String 
+  userid: String
   apidate: String
 
-  "ocr invoice columns" 
+  "ocr invoice columns"
   ocr_total: Int
   ocr_invalid: Int
   ocr_month_calls: Int
@@ -58,9 +58,9 @@ type Invoice {
   ocr_doc_discount: Int
 
   annual: Int
-  license:Int
-  deposit:Int
-  coupon:Int
-  total_fee:Int
-  flag:Int
+  license: Int
+  deposit: Int
+  coupon: Int
+  total_fee: Int
+  flag: Int
 }
