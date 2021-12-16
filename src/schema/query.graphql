@@ -1,8 +1,10 @@
 # import Admin from "admin.graphql"
 # import Invoice from "invoice.graphql"
 
+
+
 type Query {
   helloWorld: String!
   admins: [Admin]
-  invoices: [Invoice]
+  get_invoices(apidate:String, company:String, page:Int, limit: Int,isSent:String, billing_date:String ): [Invoice]
 }
