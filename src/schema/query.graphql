@@ -1,6 +1,7 @@
 # import Admin from "admin.graphql"
 # import Invoice from "invoice.graphql"
 # import Company from "company.graphql"
+# import User from "user.graphql"
 
 # define query, all defined type concentrate here, like header
 type Query {
@@ -16,4 +17,5 @@ type Query {
   ): [Invoice]
   get_companys: [Company]
   companys: [Company]
+  users: [User]
 }
