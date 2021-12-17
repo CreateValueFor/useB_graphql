@@ -1,4 +1,4 @@
-type Compay {
+type Company {
   id: ID
   company: String
   domain: String

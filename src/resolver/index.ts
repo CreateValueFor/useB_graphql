@@ -1,6 +1,7 @@
 import { IResolvers } from 'graphql-tools'
 import { admins } from './Admin'
 import { get_invoices } from './Invoice'
+import { get_companys, companys } from './company'
 
 // declare resolver options
 const resolverMAP: IResolvers = {
@@ -11,6 +12,8 @@ const resolverMAP: IResolvers = {
     // Admin
     admins,
     get_invoices,
+    get_companys,
+    companys,
   },
 }
 

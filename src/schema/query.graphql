@@ -1,5 +1,6 @@
 # import Admin from "admin.graphql"
 # import Invoice from "invoice.graphql"
+# import Company from "company.graphql"
 
 # define query, all defined type concentrate here, like header
 type Query {
@@ -13,4 +14,6 @@ type Query {
     isSent: String
     billing_date: String
   ): [Invoice]
+  get_companys: [Company]
+  companys: [Company]
 }
