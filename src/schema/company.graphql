@@ -1,0 +1,5 @@
+type Compay {
+  id: ID
+  company: String
+  domain: String
+}
