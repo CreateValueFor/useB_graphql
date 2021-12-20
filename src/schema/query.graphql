@@ -18,4 +18,5 @@ type Query {
   get_companys: [Company]
   companys: [Company]
   users: [User]
+  companyManager(companyName: String): [Company]
 }
