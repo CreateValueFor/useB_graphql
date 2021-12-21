@@ -9,4 +9,6 @@ const users = async (_: void) => {
   return users
 }
 
+// mutations
+
 export { users }
