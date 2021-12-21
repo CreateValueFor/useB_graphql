@@ -19,12 +19,13 @@ const get_companys = async (_: void) => {
 
   return companys
 }
+
 const companyManager = async (_: void, args: { companyName: string }) => {
   const { companyName } = args
   let where = {
     company: companyName,
   }
-  console.log(where)
+
   const managers = await Company.findAll({
     include: [User],
     where,
@@ -32,4 +33,22 @@ const companyManager = async (_: void, args: { companyName: string }) => {
   return managers
 }
 
-export { get_companys, companys, companyManager }
+// mutations
+// 회사 추가
+const add_company = async (
+  _: void,
+  args: { companyName: string; domain: string }
+) => {
+  const { companyName, domain } = args
+
+  const newCompany = await Company.create({
+    company: companyName,
+    domain: domain,
+  })
+
+  return newCompany
+
+  console.log(companyName, domain)
+}
+
+export { get_companys, companys, companyManager, add_company }
