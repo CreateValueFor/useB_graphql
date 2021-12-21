@@ -58,19 +58,6 @@ const get_invoices = async (
     }
   }
 
-  if (page === undefined) {
-    offset = 0
-  }
-
-  if (page !== 0) {
-    if (page && limit) {
-      offset = limit * page
-    }
-  }
-  console.log(limit)
-  if (limit === undefined) {
-  }
-
   if (page || limit) {
     if (page && limit) {
       count = limit
