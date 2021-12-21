@@ -1,0 +1,6 @@
+type Company {
+  id: ID
+  company: String
+  domain: String
+  users: [User] # join 하려고 다른 스키마를 들고옴
+}

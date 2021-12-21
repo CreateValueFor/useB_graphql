@@ -1,7 +1,7 @@
-import Admin from "../controller/admin";
+import Admin from '../controller/admin'
 
 const admins = async (_: void, args: void) => {
-  return await Admin.getItems();
-};
+  return await Admin.getItems()
+}
 
-export { admins };
+export { admins }

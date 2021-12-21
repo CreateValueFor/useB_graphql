@@ -1,9 +1,22 @@
 # import Admin from "admin.graphql"
 # import Invoice from "invoice.graphql"
+# import Company from "company.graphql"
+# import User from "user.graphql"
 
-# define query
+# define query, all defined type concentrate here, like header
 type Query {
-  helloWorld: String!
+  helloWorld: String! # essential
   admins: [Admin]
-  get_invoices(apidate:String, company:String, page:Int, limit: Int,isSent:String, billing_date:String ): [Invoice]
+  get_invoices(
+    apidate: String
+    company: String
+    page: Int
+    limit: Int
+    isSent: String
+    billing_date: String
+  ): [Invoice]
+  get_companys: [Company]
+  companys: [Company]
+  users: [User]
+  companyManager(companyName: String): [Company]
 }

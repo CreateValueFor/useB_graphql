@@ -1,0 +1,8 @@
+type User {
+  id: ID
+  tb_company_id: Int
+  username: String
+  email: String
+  phone: String
+  status: Int
+}

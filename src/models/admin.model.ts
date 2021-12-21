@@ -1,9 +1,9 @@
-import { Table, Column, Model } from "sequelize-typescript";
+import { Table, Column, Model } from 'sequelize-typescript'
 
 @Table({
-  tableName: "Admin"
+  tableName: 'Admin',
 })
 export class Admin extends Model<Admin> {
   @Column({ primaryKey: true })
-  userID!: string;
+  userID!: string
 }
