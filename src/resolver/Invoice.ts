@@ -39,26 +39,55 @@ const get_invoices = async (
   }
 ) => {
   const { apidate, company, page, limit, isSent, billing_date } = args
+
   let where = {}
   let offset = 0
-  if (apidate !== 'all') {
+  let count = 20
+
+  if (apidate) {
     where = {
       ...where,
       apidate,
     }
   }
-  if (company !== 'all') {
+
+  if (company) {
     where = {
       ...where,
       userid: company,
     }
   }
+
+  if (page === undefined) {
+    offset = 0
+  }
+
   if (page !== 0) {
-    offset = limit * page
+    if (page && limit) {
+      offset = limit * page
+    }
   }
-  if (limit !== 20) {
+  console.log(limit)
+  if (limit === undefined) {
   }
-  if (isSent !== 'all') {
+
+  if (page || limit) {
+    if (page && limit) {
+      count = limit
+      offset = page * count
+    } else if (page) {
+      offset = page * count
+    } else if (limit) {
+      count = limit
+      offset = 0
+    } else {
+      console.log(page, limit, 'something wrong')
+    }
+  } else {
+    offset = 0
+  }
+
+  if (isSent !== undefined) {
     if (isSent == 'true') {
       where = {
         ...where,
@@ -71,6 +100,7 @@ const get_invoices = async (
       }
     }
   }
+
   //TODO connect company table
   if (billing_date !== 'all') {
     if (billing_date === 'early') {
@@ -84,7 +114,7 @@ const get_invoices = async (
 
   const invoices = await Invoice.findAll({
     offset,
-    limit,
+    limit: count,
     where,
     order: [['apidate', 'DESC']],
   })
