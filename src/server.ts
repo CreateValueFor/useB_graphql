@@ -5,6 +5,9 @@ import { createServer } from 'http'
 import compression from 'compression'
 import cors from 'cors'
 import { Sequelize } from 'sequelize-typescript'
+
+import authRouter from './router/auth'
+
 // 환경변수 세팅
 // TODO mysql .env로 분리 필요
 require('dotenv').config()
@@ -47,5 +50,7 @@ app.use(compression())
 server.applyMiddleware({ app, path: '/graphql' })
 
 const httpServer = createServer(app)
+
+app.use('/auth', authRouter)
 
 httpServer.listen({ port: 80 }, (): void => console.log('server start'))
